@@ -2,14 +2,15 @@
 {
     using System.Collections.Generic;
     using System.Linq;
+    using ValueTypes;
 
     public class ProductInformation
     {
-        public int CurrentStockQuantity { get; }
+        public StockUnits CurrentStock { get; }
 
-        public ProductInformation(int currentStockQuantity)
+        public ProductInformation(StockUnits currentStock)
         {
-            CurrentStockQuantity = currentStockQuantity;
+            CurrentStock = currentStock;
         }
 
         public Proposal CreateProposal(IEnumerable<IAutomationRule> rules)

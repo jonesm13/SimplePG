@@ -4,7 +4,7 @@
     {
         public bool ShouldAutomate(ProductInformation product)
         {
-            return product.CurrentStockQuantity < 10;
+            return product.CurrentStock < 10;
         }
     }
 }
