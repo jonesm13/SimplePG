@@ -2,6 +2,7 @@
 {
     using System.Collections.Generic;
     using Domain;
+    using Domain.Entities;
     using Domain.Ports;
 
     public class Callback : ICallback<ProductInformation>

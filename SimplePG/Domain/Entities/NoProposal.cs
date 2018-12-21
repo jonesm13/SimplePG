@@ -1,4 +1,4 @@
-﻿namespace SimplePG.Domain
+﻿namespace SimplePG.Domain.Entities
 {
     using System.Collections.Generic;
     using Ports;
@@ -9,7 +9,8 @@
         {
         }
 
-        public override Proposal WithSuppliers(IFetchSuppliers supplierSource)
+        public override Proposal WithSuppliers(
+            IFetchSuppliers supplierSource)
         {
             return this;
         }

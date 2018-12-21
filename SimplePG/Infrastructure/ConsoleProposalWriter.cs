@@ -1,7 +1,7 @@
 ﻿namespace SimplePG.Infrastructure
 {
     using System;
-    using Domain;
+    using Domain.Entities;
     using Domain.Ports;
 
     public class ConsoleProposalWriter : IStoreProposals

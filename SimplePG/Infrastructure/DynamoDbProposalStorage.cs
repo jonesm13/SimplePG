@@ -1,6 +1,6 @@
 ﻿namespace SimplePG.Infrastructure
 {
-    using Domain;
+    using Domain.Entities;
     using Domain.Ports;
 
     public class DynamoDbProposalStorage : IStoreProposals

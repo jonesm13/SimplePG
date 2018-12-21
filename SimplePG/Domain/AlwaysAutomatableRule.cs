@@ -1,6 +1,8 @@
 ﻿namespace SimplePG.Domain
 {
-    public class AlwaysAutomatable : IAutomationRule
+    using Entities;
+
+    public class AlwaysAutomatableRule : IAutomationRule
     {
         public bool CanBeAutomated(Proposal proposal)
         {

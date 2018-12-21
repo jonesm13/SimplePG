@@ -1,4 +1,4 @@
-﻿namespace SimplePG.Domain
+﻿namespace SimplePG.Domain.Entities
 {
     public class Supplier
     {

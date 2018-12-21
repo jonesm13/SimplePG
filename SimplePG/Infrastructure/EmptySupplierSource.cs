@@ -2,7 +2,7 @@
 {
     using System.Collections.Generic;
     using System.Linq;
-    using Domain;
+    using Domain.Entities;
     using Domain.Ports;
 
     public class EmptySupplierSource : IFetchSuppliers

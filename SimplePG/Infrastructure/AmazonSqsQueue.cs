@@ -1,6 +1,6 @@
 ﻿namespace SimplePG.Infrastructure
 {
-    using Domain;
+    using Domain.Entities;
 
     public class AmazonSqsQueue : IQueue<ProductInformation>
     {

@@ -2,6 +2,7 @@
 {
     using System;
     using Domain;
+    using Domain.Entities;
     using Domain.Ports;
     using Infrastructure;
     using SimpleInjector;
@@ -23,7 +24,7 @@
             container.Register<IStoreProposals, ConsoleProposalWriter>();
             container.Register<IFetchSuppliers, EmptySupplierSource>();
             container.Collection.Append<IShouldRestockRule, SimpleStockQuantityRule>();
-            container.Collection.Append<IAutomationRule, AlwaysAutomatable>();
+            container.Collection.Append<IAutomationRule, AlwaysAutomatableRule>();
             container.Verify();
 
             ProposalGenerator generator = container

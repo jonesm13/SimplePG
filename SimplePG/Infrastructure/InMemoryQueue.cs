@@ -1,7 +1,7 @@
 ﻿namespace SimplePG.Infrastructure
 {
     using System.Collections.Generic;
-    using Domain;
+    using Domain.Entities;
 
     public class InMemoryQueue : IQueue<ProductInformation>
     {

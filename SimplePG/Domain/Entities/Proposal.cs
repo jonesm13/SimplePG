@@ -1,8 +1,9 @@
-﻿namespace SimplePG.Domain
+﻿namespace SimplePG.Domain.Entities
 {
     using System.Collections.Generic;
     using System.Linq;
     using Ports;
+    using Utilities;
 
     public class Proposal
     {
@@ -35,7 +36,7 @@
         public virtual Proposal WithAutomationRules(
             IEnumerable<IAutomationRule> rules)
         {
-            if(rules.All(x=>x.CanBeAutomated(this)))
+            if(rules.All(x => x.CanBeAutomated(this)))
             {
                 return new AutomatableProposal(product, suppliers);
             }
