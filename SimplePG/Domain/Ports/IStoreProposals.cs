@@ -1,7 +1,5 @@
-﻿namespace SimplePG.Infrastructure
+﻿namespace SimplePG.Domain.Ports
 {
-    using Domain;
-
     public interface IStoreProposals
     {
         void Store(Proposal toStore);

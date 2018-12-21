@@ -2,6 +2,7 @@
 {
     using System;
     using Domain;
+    using Domain.Ports;
     using Infrastructure;
     using SimpleInjector;
 

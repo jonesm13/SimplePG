@@ -15,7 +15,7 @@
             this.callback = callback;
         }
 
-        public void Go()
+        public void Go() // or maybe GoAsync and pass cancellation token?
         {
             queue.Subscribe(callback);
         }

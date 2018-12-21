@@ -1,6 +1,6 @@
 ﻿namespace SimplePG.Domain
 {
-    using Infrastructure;
+    using Ports;
 
     public class Proposal
     {
