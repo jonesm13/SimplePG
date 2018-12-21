@@ -1,8 +1,8 @@
 ﻿namespace SimplePG.Domain
 {
-    public class SimpleStockQuantityRule : IAutomationRule
+    public class SimpleStockQuantityRule : IShouldRestockRule
     {
-        public bool ShouldAutomate(ProductInformation product)
+        public bool ShouldRestock(ProductInformation product)
         {
             return product.CurrentStock < 10;
         }

@@ -21,8 +21,8 @@
             container.Register(typeof(ICallback<ProductInformation>), typeof(Callback));
             container.Register<ProposalGenerator>();
             container.Register<IStoreProposals, ConsoleProposalWriter>();
-
-            container.Collection.Append<IAutomationRule, SimpleStockQuantityRule>();
+            container.Register<IFetchSuppliers, EmptySupplierSource>();
+            container.Collection.Append<IShouldRestockRule, SimpleStockQuantityRule>();
             container.Verify();
 
             ProposalGenerator generator = container

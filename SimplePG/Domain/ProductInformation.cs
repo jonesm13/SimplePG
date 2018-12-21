@@ -13,9 +13,9 @@
             CurrentStock = currentStock;
         }
 
-        public Proposal CreateProposal(IEnumerable<IAutomationRule> rules)
+        public Proposal CreateProposal(IEnumerable<IShouldRestockRule> rules)
         {
-            if(rules.Any(x => x.ShouldAutomate(this) == false))
+            if(rules.Any(x => x.ShouldRestock(this) == false))
             {
                 return new NoProposal(this);
             }
