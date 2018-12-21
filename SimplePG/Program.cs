@@ -23,6 +23,7 @@
             container.Register<IStoreProposals, ConsoleProposalWriter>();
             container.Register<IFetchSuppliers, EmptySupplierSource>();
             container.Collection.Append<IShouldRestockRule, SimpleStockQuantityRule>();
+            container.Collection.Append<IAutomationRule, AlwaysAutomatable>();
             container.Verify();
 
             ProposalGenerator generator = container

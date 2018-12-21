@@ -6,25 +6,29 @@
 
     public class Callback : ICallback<ProductInformation>
     {
-        readonly IEnumerable<IShouldRestockRule> rules;
+        readonly IEnumerable<IShouldRestockRule> restockingRules;
         readonly IStoreProposals store;
         readonly IFetchSuppliers supplierSource;
+        readonly IEnumerable<IAutomationRule> automationRules;
 
         public Callback(
-            IEnumerable<IShouldRestockRule> rules,
+            IEnumerable<IShouldRestockRule> restockingRules,
             IStoreProposals store,
-            IFetchSuppliers supplierSource)
+            IFetchSuppliers supplierSource,
+            IEnumerable<IAutomationRule> automationRules)
         {
-            this.rules = rules;
+            this.restockingRules = restockingRules;
             this.store = store;
             this.supplierSource = supplierSource;
+            this.automationRules = automationRules;
         }
 
         public void OnReceived(ProductInformation received)
         {
             received
-                .CreateProposal(rules)
+                .CreateProposal(restockingRules)
                 .WithSuppliers(supplierSource)
+                .WithAutomationRules(automationRules)
                 .WriteTo(store);
         }
     }

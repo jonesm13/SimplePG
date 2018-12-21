@@ -9,7 +9,9 @@
         readonly IEnumerable<Supplier> suppliers;
         readonly ProductInformation product;
 
-        Proposal(ProductInformation product, IEnumerable<Supplier> suppliers)
+        protected Proposal(
+            ProductInformation product,
+            IEnumerable<Supplier> suppliers)
         {
             Ensure.IsNotNull(product, nameof(product));
             Ensure.IsNotNull(suppliers, nameof(suppliers));
@@ -28,6 +30,17 @@
             IEnumerable<Supplier> theSuppliers = supplierSource.GetSuppliers(product);
 
             return new Proposal(product, theSuppliers);
+        }
+
+        public virtual Proposal WithAutomationRules(
+            IEnumerable<IAutomationRule> rules)
+        {
+            if(rules.All(x=>x.CanBeAutomated(this)))
+            {
+                return new AutomatableProposal(product, suppliers);
+            }
+
+            return this;
         }
 
         public void WriteTo(IStoreProposals store)
